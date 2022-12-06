@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-weight: bold;
+            font-size: 2rem;
+            flex-direction: column;
+        }
+
+        .container::before {
+            content: '';
+            background: url('{% static 'img/login.jpg' %}') no-repeat center center/cover;
+            position: absolute;
+            opacity: 0.7;
+            top: 0px;
+            left: 0px;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            box-sizing: border-box;
+            margin: 10px 10px;
+            width: 100%;
+            text-align: center;
+            padding: 6px 5px;
+            border-radius: 10px;
+        }
+        span{
+            font-size: 20px;
+        }
+        span a{
+            text-decoration: none;
+            
+        }
+        span a:hover{
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3 style="margin: 20px;">Sign Up </h3>
+        <form action="/" method="POST">
+            {% csrf_token %}
+            <input type="text" name='fname' placeholder="Enter first name" required>
+            <input type="text" name='lname' placeholder="Enter last name" required>
+            <input type="email" name='UserEmail' placeholder="Enter email" required>
+            <input type="password" name='UserPassword' placeholder="Enter password" required>
+            <input type="submit" value="Sign Up">
+        </form>
+        <span>Already have an account ? <a href="login/">Login</a></span>
+
+    </div>
+</body>
+
+</html>

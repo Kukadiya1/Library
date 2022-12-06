@@ -1,0 +1,189 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: cursive;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+/* header styling */
+
+#book{
+    background-color: antiquewhite;
+}
+header {
+    /* position: sticky;
+    top: 0px; */
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 5px 0px;
+}
+
+header .header-heading{
+    border: 2px solid white;
+    padding: 2px 17px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px white,-1px -1px 2px white;
+}
+
+header .header-nav{
+    margin: 11px 2px 5px 2px;
+}
+
+ul{
+    display: flex;
+}
+
+li{
+    margin: 0px 35px;
+    list-style: none;
+}
+header a{
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Section Book styling */
+
+section .flex .section-heading h3{
+    margin: 0px 14px 0px 0px;
+    font-size: 31px; 
+    text-align: center;
+}
+
+.section-items{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.flex .section-items .sub-section-items1{
+    border-radius: 10px;
+    height: 380px;
+    width: 300px;
+    background: url("../img/book1.jpg");
+    background-size: cover;
+    box-shadow: 4px 4px 10px black;
+    margin: 20px;
+    /* opacity: .6; */
+}
+.flex .section-items .sub-section-items2{
+    border-radius: 10px;
+    height: 380px;
+    width: 300px;
+    background: url('../img/book2.jpg');
+    background-size: cover;
+    box-shadow: 4px 4px 10px black;
+    margin: 20px;
+}
+.flex .section-items .sub-section-items3{
+    border-radius: 10px;
+    height: 380px;
+    width: 300px;
+    background: url('../img/book4.jpg');
+    background-size: cover;
+    box-shadow: 4px 4px 10px black;
+    margin: 20px;
+}
+
+
+/* Section Service styling */
+
+#service{
+    position: relative;
+    top: 0px;
+    background-color: antiquewhite;
+}
+
+#service .flex .section-items .sub-section-items{
+    width: 300px;
+    height: 300px;
+    border:2px solid rgb(210, 160, 99);
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px rgb(241 151 33), -2px -2px 3px rgb(241 151 33);
+    margin: 15px;
+}
+.center-service{
+    margin: 10px 0px;
+    text-align: center;
+}
+
+.service-info{
+    /* text-indent: 15px; */
+    padding: 6px 6px;
+    text-align: justify;
+}
+
+.sub-section-items a:hover{
+    background-color: rgb(241 151 33);
+}
+
+
+/* Section about styling */
+#about{
+    background-color: antiquewhite;
+}
+.about-items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.image{
+    border-radius: 50%;
+}
+.about-flex h3,h4{
+    margin: 10px 10px;
+}
+.about-manangment{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.about-manangment-detail{
+    text-align: center;
+    margin: 10px 50px;
+}
+.about-manangment-detail h3{
+    text-align: center;
+}
+
+/* Media Queries styling */
+@media only screen and (max-width: 760px){
+    .about-manangment{
+        flex-direction: column;
+    }
+}
+
+
+footer{
+    background-color: black;
+    color: azure;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 20px;
+}
+
+
+/* Additional add */
+/* section#service {
+    border-bottom: 2px solid black;
+}
+
+#about {
+    border-top: 2px solid black;
+    background-color: antiquewhite;
+} */

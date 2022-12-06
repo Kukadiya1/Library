@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block style %}
+<!--Add form css here-->
+<!--        *{-->
+<!--            margin: 0px;-->
+<!--            padding: 0px;-->
+<!--        }-->
+        .form {
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+background-color:antiquewhite;
+border-bottom: 2px solid black;
+}
+form.form-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:20px;
+}
+input,textarea {
+    margin: 10px;
+    width: 240px;
+    text-align: center;
+    padding: 4px;
+    border-radius: 8px;
+}
+input[type='submit']{
+    cursor:pointer;
+}
+
+{% endblock %}
+
+
+{% block content %}
+{% include 'header.html' %}
+
+<!--Make Form here-->
+<div class="form">
+        <h2 style="margin: 20px;">Donate book form</h2>
+        <form action="/donatebook/" method="POST" class="form-input" required>
+            {% csrf_token %}
+            <input type="text" placeholder="Book name" name="book" required>
+            <input type="text" placeholder="Enter author name" name="author" required>
+            <input type="text" placeholder="Language" name="language" required>
+            <textarea placeholder="Book description"name="desc" style='border:2px solid black;'></textarea>
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="password" placeholder="password" name="password" required>
+            <input type="submit" value="Donate" style="width: 256px;">
+        </form>
+    </div>
+
+
+{% include 'about.html' %}
+{% include 'footer.html' %}
+{% endblock %}

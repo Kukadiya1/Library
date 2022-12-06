@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block style %}
+{% comment %} Add This page style below {% endcomment %}
+.land-book{
+    background-color:antiquewhite;
+}
+.land-book h3{
+    margin: 10px 0px;
+    font-size: 31px;
+    text-align: center;
+}
+.book-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 2px solid #c7914a;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+.image-book {
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px black;
+}
+.book{text-align:center; }
+.book-title {
+    margin: 10px 2px;
+    font-size: 20px;
+}
+.book-author{font-size:20px;margin: 10px 2px;}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-list a {
+    text-decoration: none;
+    color: black;
+    border: 2px solid black;
+    margin: 5px 2px;
+    border-radius: 7px;
+    padding: 4px;
+}
+
+.book-list a:hover {
+    background-color: #c7914a;
+}
+.section-items {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#service{
+    border-bottom:2px solid black;
+}
+
+{% endblock %}
+{% block content %}
+{% include 'header.html' %}
+{% include 'survey.html' %}
+
+{% comment %} Add Book content below {% endcomment %}
+<section id="service">
+    <div class="land-book">
+        <h3>Currently available books below</h3>
+        <div>
+            {% for i in var %}
+            <div class="book-list">
+                <h4 class="book-title">{{i.book_name}}</h4>
+                <div class="book">
+                <img src="/media/{{i.book_image}}/" width="300px" height="380px" class="image-book" alt='Book image'>
+                    </div>
+                <div class="book-author"><span>Book by {{i.author}}</span></div>
+                <div class="book-author"><span>{{i.language}}</span></div>
+                <div><span style="padding: 10px 10px;text-align: justify;">{{i.disc}}</span></div>
+                <a href="/confirmation">Take Book</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+{% include 'about.html' %}
+{% include 'footer.html' %}
+{% endblock %}
